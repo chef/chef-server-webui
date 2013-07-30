@@ -10,7 +10,9 @@
 
     <div>
       <label class="label" for="nodeEnvironment">Environment:</label>
-      <%= select_tag :chef_environment, options_from_collection_for_select(@environments, :to_s, :to_s, @env), :id => 'nodeEnvironment' %>
+      <select name="chef_environment" id="nodeEnvironment">
+      <%= options_for_select(@environments, @env) %>
+      </select>
       <br />
       <span class="description">The node's environment</span>
     </div>
